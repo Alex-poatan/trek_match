@@ -1,0 +1,14 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 80%;
+    margin-inline: 55px;
+    overflow: hidden;
+}

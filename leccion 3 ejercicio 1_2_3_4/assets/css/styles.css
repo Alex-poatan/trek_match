@@ -1,0 +1,43 @@
+body {
+    background-color: lightblue;
+}
+
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: red;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+p {
+    text-align: justify;
+    line-height: 2;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #320248;
+    hyphens: auto;
+    text-justify: newspaper;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-indent: 2em;
+    white-space: pre-line;
+    column-width: auto;
+}
+
+img {
+    width: 400px;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+}

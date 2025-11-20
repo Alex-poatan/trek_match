@@ -1,0 +1,143 @@
+/* ============================================
+   ESTILOS GENERALES
+   ============================================ */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL (960px fijo y centrado)
+   ============================================ */
+
+.container {
+  width: 960px;
+  margin: 0 auto;          /* Centra horizontalmente */
+  padding: 20px 0;         /* Espaciado superior e inferior */
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* ============================================
+   CONTENEDOR DE DOS COLUMNAS
+   Aside (izquierda): 260px
+   Main (derecha): 700px
+   ============================================ */
+
+.content-wrapper {
+  display: flex;
+  gap: 0;
+  width: 100%;
+}
+
+/* ============================================
+   COLUMNA IZQUIERDA (ASIDE) - 260px
+   ============================================ */
+
+.aside-left {
+  width: 260px;
+  flex-shrink: 0;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.aside-left h2 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
+
+.aside-left ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.aside-left li {
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ============================================
+   COLUMNA DERECHA (MAIN) - 700px
+   ============================================ */
+
+.main-right {
+  width: 700px;
+  flex: 1;
+  padding-left: 20px;
+}
+
+.main-right section {
+  margin-bottom: 30px;
+}
+
+.main-right h2 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
+
+.main-right p {
+  margin: 0 0 12px 0;
+  text-align: justify;
+  font-size: 14px;
+}
+
+/* ============================================
+   SECCIÓN DE CONTENIDO A 3 COLUMNAS
+   ============================================ */
+
+
+/* Contenedor de 3 columnas del mismo ancho */
+.three-column-wrapper {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.column {
+  flex: 1;
+  width: calc(700px / 3);  /* Aproximadamente 233px cada columna */
+}
+
+.column h3 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.column p {
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: justify;
+  margin: 0;
+}
+

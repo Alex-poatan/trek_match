@@ -1,0 +1,16 @@
+Crear un proyecto que contenga (de forma ordenada en carpetas):
+ - una página web básica en HTML
+ - llamada «index.html»
+ - utilizando el editor de texto,
+ - en donde se aplique la estructura del documento HTML
+ - y seis etiquetas diferentes.
+
+
+Nuestra página debe ser:
+
+ - un texto informativo que incluya una imagen de apoyo.
+ - Para esto crearemos la carpeta ASSETS
+ - y dentro de esta una carpeta de nombre «IMG»
+ - en donde se almacenará una imagen relacionada con el texto
+ - y que posteriormente se deberá integrar al documento HTML donde corresponda, accediendo mediante la ruta local.
+ - Además, crearemos otra carpeta dentro de ASSETS llamada «CSS» donde luego crearemos nuestra hoja de estilos.

@@ -1,0 +1,13 @@
+Instrucciones:
+
+Lección 5, Ejercicio 1
+
+1. Continuando con nuestro proyecto (de la lección 4) crear una carpeta JS dentro de ASSETS y un archivo JavaScript en dicha ubicación.
+
+Lección 5, Ejercicio 2
+
+2. Crear el código de JavaScript el cual debe realizar un smooth scroll al presionar el botón «Ir arriba» de nuestra página web.
+
+Lección 5, Ejercicio 3
+
+3. Linkear debe linkear el archivo JS externo en el documento HTML, mediante la ruta correspondiente.

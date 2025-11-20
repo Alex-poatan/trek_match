@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de prueba de HTML5</title>
+  </head>
+  <body>
+    <main>
+      <h1>Formulario de prueba de HTML5</h1>
+
+      <form action="" method="get">
+        <!-- Nombre -->
+
+        <!-- Nota:
+        el atributo for de la
+        etiqueta label debe tener el mismo valor
+        que el valor del atributo "id"
+        de la etiqueta "input" correspondiente
+        para así poder vincularlos
+        semántica y funcionalmente -->
+        <label for="name">Nombre:</label>
+
+        <!-- Nota:
+         el atributo "name"
+         señala el nombre que tendrá como variable
+         de javascript a nivel del DOM
+         o el nombre que tendrá como variable
+         del lenguaje de backend
+         según correpsonda dependiento de su propósito
+
+         mientras que el atributo "id"
+         es un identificador único
+         de cualquier elemento HTML
+         y que sirve para identificarlo y manipularlo
+         a nivel del DOM
+        -->
+
+        <input type="text" name="name" id="name" required autofocus />
+
+        <!-- Correo electrónico -->
+
+        <br />
+        <br />
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" name="email" id="email" required />
+
+        <br />
+        <br />
+
+        <!-- URL -->
+        <label for="url">URL:</label>
+
+        <input
+          type="url"
+          name="url"
+          id="url"
+          placeholder="Escribe la URL de tu página web personal"
+        />
+
+        <br />
+        <br />
+
+        <!-- Fecha -->
+        <label for="date">Fecha:</label>
+        <input type="date" name="date" id="date" />
+
+        <br />
+        <br />
+
+        <!-- Tiempo (hora) -->
+
+        <label for="time">Hora:</label>
+        <input type="time" name="time" id="time" />
+
+        <br />
+        <br />
+
+        <!-- Fecha y hora -->
+
+        <label for="datetime-local">Fecha y hora:</label>
+        <input
+          type="datetime-local"
+          name="datetime-local"
+          id="datetime-local"
+        />
+
+        <br />
+        <br />
+
+        <!-- MEs -->
+
+        <label for="month">Mes:</label>
+        <input type="month" name="month" id="month" />
+
+        <br />
+        <br />
+
+        <!-- Semana -->
+
+        <label for="week">Semana:</label>
+        <input type="week" name="week" id="week" />
+
+        <br />
+        <br />
+
+        <!-- Número -->
+
+        <label for="number">Número:</label>
+        <input type="number" name="number" id="number" min="-10" max="10" />
+
+        <br />
+        <br />
+
+        <!-- Teléfono -->
+
+        <br />
+        <br />
+
+        <label for="tel">Teléfono:</label>
+        <input
+          type="tel"
+          name="tel"
+          id="tel"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          placeholder="123-456-7890"
+        />
+
+        <!-- Término de búsqueda -->
+
+        <br />
+        <br />
+        <label for="search">Buscar:</label>
+        <input
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Término de búsqueda"
+        />
+
+        <!-- Color favorito -->
+
+        <br />
+        <br />
+        <label for="color">Color favorito:</label>
+        <input type="color" name="color" id="color" value="#ff0000" />
+
+        <!-- Envío -->
+
+        <br />
+        <br />
+
+        <input type="submit" value="Enviar" />
+      </form>
+    </main>
+  </body>
+</html>

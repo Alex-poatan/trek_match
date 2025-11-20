@@ -1,0 +1,29 @@
+body {
+    background-color: lightblue;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+p {
+    text-align: justify;
+    line-height: 2;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #320248;
+    hyphens: auto;
+    text-justify: newspaper;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-indent: 2em;
+    white-space: pre-line;
+    column-width: auto;
+}
+
+/* Image sizing is handled via Bootstrap utilities and inline style (object-fit) in HTML */

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad M2 L6 - jQuery</title>
+
+    <!-- Bootstrap CDN CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos Personalizados EXTERNOS -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <!-- Barra de Navegación con Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">jQuery Avanzado</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Ejemplos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <div class="container mt-5">
+
+        <!-- SECCIÓN 1: Manipulación del DOM -->
+        <div class="container-demo">
+            <h2>1. Manipulación del DOM</h2>
+            <p>jQuery permite cambiar <strong>estilos</strong>, <strong>contenido</strong> y <strong>estructura</strong> HTML dinámicamente.</p>
+
+            <ul id="miLista" class="list-group">
+                <li class="list-group-item">Elemento 1</li>
+                <li class="list-group-item">Elemento 2</li>
+                <li class="list-group-item">Elemento 3</li>
+            </ul>
+
+            <button id="agregarElemento" class="btn btn-success mt-3">Agregar Elemento 4</button>
+        </div>
+
+        <!-- SECCIÓN 2: Eventos en jQuery -->
+        <div class="container-demo">
+            <h2>2. Eventos en jQuery</h2>
+            <p>Los eventos nos permiten ejecutar código cuando algo ocurre (click, hover, etc.).</p>
+
+            <ul id="listaToggle" class="list-group">
+                <li class="list-group-item">Elemento A</li>
+                <li class="list-group-item">Elemento B</li>
+                <li class="list-group-item">Elemento C</li>
+            </ul>
+
+            <button id="toggleLista" class="btn btn-primary mt-3">Ocultar Lista</button>
+        </div>
+
+        <!-- SECCIÓN 3: Plugin Bootstrap - Tooltips -->
+        <div class="container-demo">
+            <h2>3. Tooltips de Bootstrap (Plugin)</h2>
+            <p>Los tooltips son pequeñas ventanas emergentes que aparecen cuando posicionas el mouse sobre un elemento.</p>
+
+            <button
+                class="btn btn-info"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Este es un tooltip superior"
+            >
+                Hover aquí (Tooltip Arriba)
+            </button>
+
+            <button
+                class="btn btn-warning"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+                title="Este es un tooltip derecho"
+            >
+                Hover aquí (Tooltip Derecha)
+            </button>
+
+            <button
+                class="btn btn-danger"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Este es un tooltip inferior"
+            >
+                Hover aquí (Tooltip Abajo)
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS CDN (necesario para tooltips) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery CDN (necesario para selecciones y eventos) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Script Personalizado EXTERNO -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
