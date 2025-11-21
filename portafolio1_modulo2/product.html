@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detalle de experiencia - TrekMatch</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">TrekMatch.cl</a>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Carro</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+      <div id="product-detail" class="row">
+        <div class="col-md-6">
+          <img id="product-image" src="https://via.placeholder.com/600x400?text=Experiencia" class="img-fluid rounded" alt="">
+          </div>
+          <div class="col-md-6">
+            <h2 id="product-title">Título de la experiencia</h2>
+            <p id="product-desc">Descripción larga de la experiencia.</p>
+            <ul id="product-info">
+              <li>Dificultad: Intermedio</li>
+              <li>Fecha: 15-17 Dic</li>
+              <li>Cupos: 8</li>
+            </ul>
+            <p class="h4" id="product-price">CLP $0</p>
+            <button id="add-to-cart" class="btn btn-success">Añadir al carro</button>
+          </div>
+          <script>
+            if(window.location.pathname.endsWith('product.html')){
+              const params = new URLSearchParams(window.location.search);
+              const id = params.get('id') || '1';
+              // Catálogo centrado en Torres del Paine
+              const catalog = {
+                '1':{title:'Torres del Paine - Circuito W (4 días)',price:650,desc:'Circuito W: vistas icónicas, trekking de varios días, campings y pasos glaciares. Adecuado para nivel intermedio-avanzado.',img:'assets/img/Torres del paine.png',info:['Dificultad: Intermedio-Avanzado','Duración: 4 días','Cupos: limitados']},
+                '2':{title:'Torres del Paine - Circuito O (8-9 días)',price:1200,desc:'Circuito O: recorrido extenso que incluye el W y sectores adicionales, para caminantes experimentados. Guía experto y logística incluida.',img:'assets/img/Torres del paine.png',info:['Dificultad: Avanzado','Duración: 8-9 días','Cupos: limitados']}
+              };
+              const p = catalog[id] || catalog['1'];
+              $('#product-title').text(p.title);
+              $('#product-desc').text(p.desc);
+              $('#product-price').text('CLP $'+p.price+'.000');
+              $('#product-image').attr('src', p.img);
+              const $info = $('#product-info');
+              $info.empty();
+              p.info.forEach(it => $info.append('<li>'+it+'</li>'));
+              $('#add-to-cart').on('click', function(){ addToCart({id:id,name:p.title,price:p.price,qty:1}); alert('Añadido al carro: '+p.title); });
+            }
+          </script>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

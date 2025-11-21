@@ -1,0 +1,22 @@
+/* Estilos básicos para el portafolio - TrekMatch */
+:root{
+  --brand:#0d6efd;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f8f9fa;
+  color:#222;
+}
+.lead{color:#334;}
+.card-title{font-size:1.05rem}
+
+/* Footer */
+footer{background:#0b2b4a;color:#fff}
+
+/* Product detail tweaks */
+#product-info li{margin-bottom:6px}
+
+/* small responsive helper */
+@media(max-width:767px){
+  .display-6{font-size:1.6rem}
+}
