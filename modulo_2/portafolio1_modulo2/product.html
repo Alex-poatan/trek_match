@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detalle de servicio - Servicios Profesionales</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Servicios Profesionales</a>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Carro</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+      <div id="product-detail" class="row">
+        <div class="col-md-6">
+          <img id="product-image" src="https://via.placeholder.com/600x400?text=Experiencia" class="img-fluid rounded" alt="">
+          </div>
+          <div class="col-md-6">
+            <h2 id="product-title">Título del servicio</h2>
+            <p id="product-desc">Descripción larga del servicio.</p>
+            <ul id="product-info">
+              <li>Dificultad: Intermedio</li>
+              <li>Fecha: 15-17 Dic</li>
+              <li>Cupos: 8</li>
+            </ul>
+            <p class="h4" id="product-price">Precio: Contactar</p>
+            <button id="add-to-cart" class="btn btn-success">Contactar / Solicitar</button>
+          </div>
+          <script>
+            if(window.location.pathname.endsWith('product.html')){
+              const params = new URLSearchParams(window.location.search);
+              const id = params.get('id') || '1';
+              const catalog = {
+                '1':{title:'Analítica de Datos para Decisiones de Negocio',price:300,desc:'Dashboards ejecutivos, forecasting, optimización de inventarios y automatización de reportería.',img:'assets/img/Torres del paine.png',info:['Python (pandas, NumPy, scikit-learn)','Power BI, SQL','Visualización: Matplotlib, Plotly']},
+                '2':{title:'Mejora de Procesos y Reducción de Costos',price:350,desc:'Optimización operacional aplicando Lean, Six Sigma, VSM y simulación de procesos.',img:'assets/img/Torres del paine.png',info:['Lean Manufacturing','Six Sigma (DMAIC)','Simulación y optimización']},
+                '3':{title:'Dirección y Evaluación de Proyectos',price:280,desc:'Gestión integral bajo estándares PMI, evaluación económica y control de riesgos.',img:'assets/img/Torres del paine.png',info:['Formulación y Evaluación de Proyectos','PMI / MS Project','Análisis económico (TIR/VAN)']},
+                '4':{title:'E-Commerce y Transformación Digital',price:400,desc:'Implementación de tiendas online, integración de pagos y automatización comercial.',img:'assets/img/Torres del paine.png',info:['Frontend + Backend','Integración de pagos','Automatización comercial']},
+                '5':{title:'Estrategia de Sostenibilidad y Cumplimiento Ambiental',price:320,desc:'Economía circular, huella de carbono y reportes ESG (ISO 14064-1).',img:'assets/img/Torres del paine.png',info:['Huella de carbono (ISO)','Estrategias ESG','Ley REP y cumplimiento']}
+              };
+              const p = catalog[id] || catalog['1'];
+              $('#product-title').text(p.title);
+              $('#product-desc').text(p.desc);
+              $('#product-price').text('Precio: Contactar');
+              $('#product-image').attr('src', p.img);
+              const $info = $('#product-info');
+              $info.empty();
+              p.info.forEach(it => $info.append('<li>'+it+'</li>'));
+              // preparar botón para ser manejado por main.js: añadimos atributos data-* para que el handler '.add-to-cart' los use
+              $('#add-to-cart').addClass('add-to-cart').attr('data-id', id).attr('data-name', p.title).attr('data-price', p.price);
+            }
+          </script>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
