@@ -1,22 +1,135 @@
-/* Estilos básicos para el portafolio - TrekMatch */
+/* Theme and base styles */
 :root{
-  --brand:#0d6efd;
+  /* Paleta principal (ajustada para tono profesional + e-commerce B2B) */
+  --bg:#0b1218;           /* fondo principal */
+  --surface:#0f1b24;      /* superficies secundarias */
+  --muted:#9aa6b2;        /* texto secundario */
+  --brand-1:#12a4ff;      /* azul primario */
+  --brand-2:#6be1ff;      /* azul claro (gradiente) */
+  --accent:#7b5cff;       /* acento púrpura suave */
+  --card:#0f2430;         /* fondo de tarjeta */
+  --glass: rgba(255,255,255,0.03);
+  --cta-gradient: linear-gradient(90deg,var(--brand-1),var(--brand-2));
 }
+*{box-sizing:border-box}
 body{
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f8f9fa;
-  color:#222;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: #e6eef6;
+  -webkit-font-smoothing:antialiased;
 }
-.lead{color:#334;}
-.card-title{font-size:1.05rem}
+
+/* Navbar */
+.navbar-custom{background: linear-gradient(180deg, rgba(8,12,18,0.95), rgba(12,18,26,0.9)); border-bottom:1px solid rgba(255,255,255,0.03);}
+.brand-mark{display:inline-block;background:var(--cta-gradient);color:#001; font-weight:800;padding:8px 12px;border-radius:10px; box-shadow:0 6px 18px rgba(18,164,255,0.15)}
+.brand-text{font-weight:700;color:var(--muted); letter-spacing:0.2px}
+.btn-cta{background:var(--cta-gradient); color:#021; border-radius:12px; padding:8px 16px; font-weight:700; box-shadow:0 8px 24px rgba(18,164,255,0.14)}
+.btn-transparent{color:var(--muted); border:1px solid transparent}
+.search-wrapper input{width:280px}
+
+/* Layout */
+.sidebar{background:transparent}
+.sidebar .category-item{color:var(--muted); text-align:left; padding:6px 0; display:block}
+.sidebar .category-item.active{color:var(--brand); font-weight:600}
+
+/* Product cards */
+.service-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; overflow:hidden; position:relative; border:1px solid rgba(255,255,255,0.04);}
+.service-card .thumb{height:200px; background-position:center; background-size:cover; filter:brightness(0.55) contrast(0.98) saturate(1.02); position:relative}
+.service-card .overlay{position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:18px; background:linear-gradient(180deg, rgba(2,6,10,0.12), rgba(2,6,10,0.85));}
+.service-card h5{margin:0;color:#fff; font-size:1.12rem; font-weight:700; line-height:1.08; text-shadow:0 10px 28px rgba(3,10,20,0.75)}
+.service-card p{color:var(--muted);font-size:0.92rem}
+.service-actions{display:flex; gap:8px; margin-top:auto; align-items:center}
+.service-badge{font-size:12px; padding:6px 10px; background:rgba(0,0,0,0.45); border-radius:20px; color:#fff; font-weight:600}
+.service-card:hover{transform:translateY(-6px); transition:transform .18s ease; box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+
+/* Botones dentro de tarjetas para parecerse al pantallazo */
+.service-actions .btn-outline-light{color:#fff; border-color:rgba(255,255,255,0.8); background:rgba(255,255,255,0.03)}
+.service-actions .btn-outline-light:hover{background:rgba(255,255,255,0.06); color:#fff}
+.service-actions .btn-primary{background:var(--cta-gradient); border:0; color:#021; box-shadow:0 6px 18px rgba(18,164,255,0.12)}
+.service-actions .btn-primary:hover{filter:brightness(1.02); transform:translateY(-2px)}
+.service-actions .btn-primary:active{filter:brightness(0.88); transform:translateY(0)}
+.service-actions .btn{border-radius:8px; padding:8px 10px}
+
+/* Texto grande en tarjetas (móvil) */
+.service-card h5{font-size:1.05rem}
+@media(max-width:576px){
+  .service-card h5{font-size:1.18rem}
+  .service-card p{display:none}
+  .service-actions{margin-top:14px}
+}
+
+/* Modal dark theme to match site */
+.modal-content{background:linear-gradient(180deg, rgba(11,18,24,0.98), rgba(15,27,36,0.98)); color: #e6eef6; border: none}
+.modal-header{border-bottom:1px solid rgba(255,255,255,0.04)}
+.modal-title{color:#eaf6ff}
+.modal-body{color:rgba(230,238,246,0.95)}
+.modal .form-control{background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); color: #e6eef6}
+.modal .form-control::placeholder{color: rgba(230,238,246,0.45)}
+.modal .form-control:focus{box-shadow:0 0 0 0.2rem rgba(18,164,255,0.12); border-color: rgba(18,164,255,0.6)}
+.modal .form-text{color: rgba(230,238,246,0.7)}
+.modal-footer{border-top:1px solid rgba(255,255,255,0.04)}
+.modal .btn-primary{background:var(--cta-gradient); color:#021; border:0}
+.modal .btn-secondary{background:transparent; border:1px solid rgba(255,255,255,0.08); color:rgba(230,238,246,0.9)}
+
+/* Ensure overlay elements (title) don't get covered by actions on small widths */
+@media(max-width:480px){
+  .service-card .overlay{padding:14px}
+  .service-actions{flex-wrap:wrap; gap:6px}
+  .service-actions .btn{width:48%}
+}
 
 /* Footer */
-footer{background:#0b2b4a;color:#fff}
+footer{background:transparent; border-top:1px solid rgba(255,255,255,0.03);}
+
+/* Hero / Header adjustments: improve legibility over the hero */
+header.py-5.bg-light{
+  /* use a dark, subtle blue-tinged background instead of bootstrap light */
+  background: linear-gradient(180deg, rgba(6,10,14,0.98), rgba(8,14,22,0.92));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  color: #e6eef6;
+}
+header.py-5.bg-light .display-6{
+  color: #f8fbff;
+  font-weight:700;
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  text-shadow: 0 10px 30px rgba(3,10,20,0.75);
+}
+header.py-5.bg-light .lead{
+  color: rgba(230,238,246,0.9);
+  font-weight:400;
+}
+header.py-5.bg-light p{ color: rgba(230,238,246,0.88); }
+header.py-5 .btn-primary{
+  background: var(--cta-gradient);
+  border: none;
+  color: #021;
+  padding: 10px 18px;
+  font-weight:700;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(18,164,255,0.12);
+}
+
+/* Reduce visual noise on mobile hero and keep CTA visible */
+@media(max-width:576px){
+  header.py-5.bg-light{ padding-top:2.5rem; padding-bottom:2.5rem }
+  header.py-5.bg-light .display-6{ font-size:1.6rem }
+  header.py-5 .btn-primary{ padding:8px 14px }
+}
 
 /* Product detail tweaks */
 #product-info li{margin-bottom:6px}
 
-/* small responsive helper */
-@media(max-width:767px){
-  .display-6{font-size:1.6rem}
+/* Utilities */
+.text-muted{color:var(--muted) !important}
+
+/* Responsive tweaks */
+@media(max-width:991px){
+  .search-wrapper input{width:160px}
+  .service-card .thumb{height:180px}
+}
+
+@media(max-width:576px){
+  .search-wrapper{display:none}
+  .brand-text{display:none}
+  .service-card .thumb{height:150px}
 }

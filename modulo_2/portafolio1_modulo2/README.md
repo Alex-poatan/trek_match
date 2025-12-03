@@ -23,9 +23,18 @@ Tecnologías empleadas:
 - JavaScript + jQuery (por CDN)
 
 Cómo probar localmente:
-1. Abrir `index.html` en el navegador (doble clic o servidor local).
-2. Hacer click en "Contactar" o "Ver detalle" para inspeccionar un servicio.
-3. Ir a `cart.html` para ver las solicitudes guardadas en el navegador.
+1. Abrir `index.html` en el navegador (doble clic) o ejecutar un servidor local (recomendado).
+	- Con Live Server (VS Code) o con Python: `python -m http.server 5500` y abrir `http://localhost:5500`.
+2. Usar la caja de búsqueda para filtrar servicios y la barra lateral para seleccionar categorías.
+3. Pulsar "Contactar" en una tarjeta para abrir el modal de cotización (se guarda una solicitud simulada en `localStorage`).
+4. Ver las solicitudes en `cart.html`.
+
+Cambios principales en esta versión:
+- Nuevo tema oscuro y estilo moderno acorde a un portafolio B2B.
+- Búsqueda en vivo y filtrado por categorías.
+- Tarjetas con overlay, efectos de hover y CTA de contacto.
+- Modal de cotización para capturar datos básicos del cliente.
+- Carro/solicitudes usando `localStorage` para simular flujo de e-commerce de servicios.
 
 Notas:
 - Esta carpeta es una demo front-end para mostrar la oferta de servicios de forma sencilla. No incluye backend ni integración real de pagos o CRM.

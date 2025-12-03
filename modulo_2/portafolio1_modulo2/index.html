@@ -5,21 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Soluciones de Transformación y Analítica</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-      <a class="navbar-brand" href="#">Servicios Profesionales</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="nav">
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <span class="brand-mark">TM</span>
+        <span class="ms-2 brand-text">Servicios Industriales</span>
+      </a>
+        <div class="ms-auto d-flex align-items-center gap-3">
+        <div class="search-wrapper d-none d-md-block">
+          <input id="search" type="search" class="form-control form-control-sm" placeholder="Buscar servicios...">
+        </div>
+        <button class="btn btn-outline-light btn-sm d-none d-md-inline">Mi cuenta</button>
+        <a href="cart.html" class="btn btn-transparent">Solicitudes</a>
+        <a href="#contactModal" data-bs-toggle="modal" class="btn btn-cta">Cotizar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse mt-2" id="nav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#products">Experiencias</a></li>
-          <li class="nav-item"><a class="nav-link" href="cart.html">Carro</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">Acerca</a></li>
         </ul>
       </div>
@@ -43,86 +54,78 @@
 
   <!-- Products -->
   <main class="py-5">
-    <div class="container">
-      <h2 id="services" class="mb-4">Servicios disponibles</h2>
-      <div class="row g-4" id="product-list">
-        <!-- Analítica de Datos -->
-        <div class="col-md-6">
-          <div class="card h-100">
-            <img src="assets/img/Analitica_de_datos/1.png" class="card-img-top" alt="Analítica de Datos">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Analítica de Datos para Decisiones de Negocio</h5>
-              <p class="card-text">Implementación de dashboards, forecasting, optimización de inventarios y automatización de reportería gerencial.</p>
-              <div class="mt-auto">
-                <a href="product.html?id=1" class="btn btn-outline-primary">Ver detalle</a>
-                <button class="btn btn-primary ms-2 add-to-cart" data-id="1" data-name="Analítica de Datos" data-price="300">Contactar</button>
-              </div>
+    <div class="container-fluid">
+      <div class="row gx-4">
+        <aside class="col-lg-3 mb-4">
+          <div class="sidebar card bg-transparent border-0">
+            <div class="card-body p-0">
+              <h6 class="text-muted">Categorías</h6>
+              <ul id="category-list" class="list-unstyled mt-3">
+                <li><button class="btn btn-link category-item" data-cat="all">Todas</button></li>
+                <li><button class="btn btn-link category-item" data-cat="analitica">Analítica</button></li>
+                <li><button class="btn btn-link category-item" data-cat="procesos">Mejora de Procesos</button></li>
+                <li><button class="btn btn-link category-item" data-cat="proyectos">Dirección de Proyectos</button></li>
+                <li><button class="btn btn-link category-item" data-cat="ecommerce">E-Commerce</button></li>
+                <li><button class="btn btn-link category-item" data-cat="sostenibilidad">Sostenibilidad</button></li>
+              </ul>
             </div>
           </div>
-        </div>
+        </aside>
 
-        <!-- Mejora de Procesos -->
-        <div class="col-md-6">
-          <div class="card h-100">
-            <img src="assets/img/Mejora_de_proceso/2.png" class="card-img-top" alt="Mejora de Procesos">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Mejora de Procesos y Reducción de Costos</h5>
-              <p class="card-text">Diagnóstico y optimización operacional con Lean, Six Sigma, VSM, TPM y simulación de procesos.</p>
-              <div class="mt-auto">
-                <a href="product.html?id=2" class="btn btn-outline-primary">Ver detalle</a>
-                <button class="btn btn-primary ms-2 add-to-cart" data-id="2" data-name="Mejora de Procesos" data-price="350">Contactar</button>
-              </div>
-            </div>
+        <section class="col-lg-9">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 id="services" class="mb-0">Experiencias & Proyectos</h2>
+            <small class="text-muted">Casos y servicios reales - solicita un presupuesto</small>
           </div>
-        </div>
 
-        <!-- Dirección de Proyectos -->
-        <div class="col-md-6">
-          <div class="card h-100">
-            <img src="assets/img/Direccion_de_proyectos/3.png" class="card-img-top" alt="Dirección de Proyectos">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Dirección y Evaluación de Proyectos</h5>
-              <p class="card-text">Gestión integral bajo estándares PMI: planificación, control, riesgos y evaluación económica (TIR/VAN).</p>
-              <div class="mt-auto">
-                <a href="product.html?id=3" class="btn btn-outline-primary">Ver detalle</a>
-                <button class="btn btn-primary ms-2 add-to-cart" data-id="3" data-name="Dirección de Proyectos" data-price="280">Contactar</button>
-              </div>
-            </div>
+          <div id="product-list" class="row g-3">
+            <!-- Cards will be rendered by JS for flexibility -->
           </div>
-        </div>
-
-        <!-- E-Commerce -->
-        <div class="col-md-6">
-          <div class="card h-100">
-            <img src="assets/img/E-commerce/4.png" class="card-img-top" alt="E-Commerce y Transformación Digital">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">E-Commerce y Transformación Digital</h5>
-              <p class="card-text">Desarrollo de tiendas online, integración de pagos, automatización comercial y plataformas a medida.</p>
-              <div class="mt-auto">
-                <a href="product.html?id=4" class="btn btn-outline-primary">Ver detalle</a>
-                <button class="btn btn-primary ms-2 add-to-cart" data-id="4" data-name="E-Commerce y Transformación" data-price="400">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sostenibilidad -->
-        <div class="col-md-6">
-          <div class="card h-100">
-            <img src="assets/img/Sostenibilidad/5.png" class="card-img-top" alt="Sostenibilidad">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Estrategia de Sostenibilidad y Cumplimiento Ambiental</h5>
-              <p class="card-text">Consultoría en economía circular, cálculo de huella de carbono (ISO 14064-1) y reportes ESG.</p>
-              <div class="mt-auto">
-                <a href="product.html?id=5" class="btn btn-outline-primary">Ver detalle</a>
-                <button class="btn btn-primary ms-2 add-to-cart" data-id="5" data-name="Sostenibilidad Ambiental" data-price="320">Contactar</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        </section>
       </div>
     </div>
   </main>
+
+  <!-- Solicitud modal (híbrido: selección de servicios + formulario) -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Enviar Solicitud / Presupuesto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div id="solicitud-contents">
+            <div class="mb-3">
+              <h6>Servicios seleccionados</h6>
+              <div id="solicitud-list" class="mb-2"></div>
+            </div>
+            <form id="solicitud-form">
+              <div class="row g-2">
+                <div class="col-md-6">
+                  <label class="form-label">Nombre / Empresa</label>
+                  <input id="sol-name" class="form-control" placeholder="Tu nombre o empresa">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input id="sol-email" type="email" class="form-control" placeholder="email@ejemplo.com">
+                </div>
+              </div>
+              <div class="mb-2 mt-2">
+                <label class="form-label">Descripción del problema / requisitos</label>
+                <textarea id="sol-msg" class="form-control" rows="4" placeholder="Cuéntame qué necesitas y el contexto"></textarea>
+              </div>
+              <div class="form-text text-muted">Enviar solicitud es gratis. Nosotros revisamos y te enviaremos una propuesta ajustada.</div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button id="sol-send" type="button" class="btn btn-primary">Enviar solicitud</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="bg-dark text-light py-4">
